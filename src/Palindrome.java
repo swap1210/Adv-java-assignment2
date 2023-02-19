@@ -4,8 +4,8 @@ public class Palindrome {
         int right = p_text.length() - 1;
 
         while (left < right || left != right) {
-            System.out.println(p_text.charAt(left) + "=" + p_text.charAt(right));
-            System.out.println((left) + "=" + (right));
+            // System.out.println(p_text.charAt(left) + "=" + p_text.charAt(right));
+            // System.out.println((left) + "=" + (right));
             if (!isChar(p_text.charAt(left))) {
                 left++;
                 continue;

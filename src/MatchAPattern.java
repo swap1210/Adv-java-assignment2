@@ -12,30 +12,22 @@ public class MatchAPattern {
             String line;
             int lineNumber = 1;
             while ((line = reader.readLine()) != null) {
-                System.out.println("Line is " + line);
                 // Search for pattern in line (ignore case)
                 int index = line.toLowerCase().indexOf(p_pattern);
                 while (index >= 0) {
                     List<Integer> item = new LinkedList<>();
-                    item.add(lineNumber);
                     item.add(index + 1);
+                    item.add(lineNumber);
                     res.add(item);
                     // Print position number of match
-                    System.out.println("Match found at position " + lineNumber + +(index + 1));
-                    // index = line.toLowerCase().indexOf(p_pattern, index + 1); // check for next
+                    index = line.toLowerCase().indexOf(p_pattern, index + 1); // check for next
                     // match
                 }
                 lineNumber++;
             }
         } catch (Exception e) {
-
-        } finally {
+            System.out.println("File not found.");
         }
-        // try {
-        // reader.close();
-        // } catch (IOException e) {
-        // e.printStackTrace();
-        // }
         return res;
     }
 }
